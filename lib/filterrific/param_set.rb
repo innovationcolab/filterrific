@@ -39,7 +39,7 @@ module Filterrific
             permissible_filter_params << p
           end
         end
-        filterrific_params = filterrific_params.permit(permissible_filter_params).to_h.stringify_keys
+        filterrific_params = filterrific_params.permit(["with_name", "with_major", "with_year", "with_any_tag_ids" => []]).to_h.stringify_keys
       else
         filterrific_params.stringify_keys!
       end
